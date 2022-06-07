@@ -26,3 +26,12 @@ resource "aws_instance" "ubuntu" {
     Name = var.instance_name
   }
 }
+
+resource "aws_s3_bucket" "b" {
+  bucket = "my-dummy-test-bucket-86753o9"
+
+  tags = {
+    Name        = "Poorly secured default S3 bucket"
+    Environment = "Dev"
+  }
+}
